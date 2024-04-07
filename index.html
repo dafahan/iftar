@@ -38,7 +38,10 @@
     </div>
     <script>
         const main = document.getElementById('main');
-
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let name = urlParams.get('q');
+        if(name==null)name="ANGGOTA GRUP SSN";
         let production = true;
 
         let detailElement = `
@@ -62,7 +65,7 @@
         <div class="flex w-full md:w-2/3 h-1/2  flex-col text-white text-center gap-12 lg:p-12 justify-center ">
             <h1 class="libre-baskerville text-2xl lg:text-5xl">UNDANGAN</h1>
             <h1 class="berkshire-swash text-4xl lg:text-7xl">KONG KOW WITH SOBAT SSN</h1>
-            <h1 class="libre-baskerville text-2xl lg:text-5xl" id="nama">ANGGOTA GRUP SSN</h1>
+            <h1 class="libre-baskerville text-2xl lg:text-5xl" id="nama">`+name+`</h1>
             <button class="italic" id="homeBtn" onclick="show(detailElement)"><i class="fa-solid fa-arrow-right"></i> detail acara... <i class="fa-solid fa-arrow-left"></i></button>
         </div>
     `;
