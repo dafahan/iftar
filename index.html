@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .berkshire-swash {
+            font-family: "Berkshire Swash", serif;
+        }
+
+        .libre-baskerville {
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .inter {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings: "slnt" 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inter" id="root">
+        <div class="flex w-screen h-screen bg-[url('assets/img/banner.png')] bg-cover bg-center justify-center items-center">
+            <div class="w-full h-full flex justify-center items-center transition-all duration-500" id="main">
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        const main = document.getElementById('main');
+
+        let production = true;
+
+        let detailElement = `
+    <div class="flex w-full md:w-2/3 h-1/2  flex-col text-white text-center gap-4 md:gap-8 lg:p-12 justify-start py-2">
+            <h1 class="berkshire-swash text-2xl lg:text-5xl">KONG KOW WITH SOBAT SSN</h1>
+            <p class=" text-2xl" id="nama">
+                Halo, SOBAT SSN semua!
+                Sebagai Sobat SSN diharapkan besok berkumpul di :<br>
+                <p class="text-start self-center text-sm md:text-xl">
+                    🗓️ Minggu , 8 April 2024<br>
+                    ⏰ 20.00 - Selesai<br>
+                    📍Warunk Viral<br>
+                    👕 Baju Islam + Bawa Pulpen ‼️‼️
+                </p>
+                </p>
+            <button class="italic" id="homeBtn" onclick="show(rundownElement)"><i class="fa-solid fa-arrow-right"></i> ada apa ajasih besok ???... <i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+    `;
+
+        let homeElement = `
+        <div class="flex w-full md:w-2/3 h-1/2  flex-col text-white text-center gap-12 lg:p-12 justify-center ">
+            <h1 class="libre-baskerville text-2xl lg:text-5xl">UNDANGAN</h1>
+            <h1 class="berkshire-swash text-4xl lg:text-7xl">KONG KOW WITH SOBAT SSN</h1>
+            <h1 class="libre-baskerville text-2xl lg:text-5xl" id="nama">ANGGOTA GRUP SSN</h1>
+            <button class="italic" id="homeBtn" onclick="show(detailElement)"><i class="fa-solid fa-arrow-right"></i> detail acara... <i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+    `;
+
+    let rundownElement = `
+        <div class="flex w-full md:w-2/3   flex-col text-white text-center gap-4 md:gap-8 lg:p-12 justify-start py-2">
+                    <h1 class="berkshire-swash text-2xl lg:text-5xl">Rundown Acara</h1>
+                    <!-- TABLE  -->
+                    <div class="overflow-x-auto">
+                        <table class="table-auto min-w-full border-collapse border border-gray-300 ">
+                            <thead class="bg-black">
+                                <tr>
+                                    <th class="px-4 py-2">Time</th>
+                                    <th class="px-4 py-2">Activity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="px-4 py-2">20.00-20.30</td>
+                                    <td class="px-4 py-2">Kedatangan Peserta</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2">20.30-20.45</td>
+                                    <td class="px-4 py-2">Sambutan oleh ketua pelaksana</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2">20.45-20.50</td>
+                                    <td class="px-4 py-2">Makan</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2">20.50-20.52</td>
+                                    <td class="px-4 py-2">Minum</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2">20.52-21.00</td>
+                                    <td class="px-4 py-2">Menyanyikan lagu Indonesia Raya</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2">21.00 - selesai</td>
+                                    <td class="px-4 py-2">Penyampaian materi oleh narasumber @Bintang Kiyay</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="italic" id="homeBtn" onclick="show(pemateri)"><i class="fa-solid fa-arrow-right"></i> kenalan sama pemateri yukk <i class="fa-solid fa-arrow-left"></i></button>
+                </div>
+                `;
+
+
+        let pemateri = `
+        <div class="flex w-full md:w-2/3   flex-col text-white text-center gap-4 md:gap-8 lg:p-12 justify-start items-center py-2">
+                    <h1 class="berkshire-swash text-2xl lg:text-5xl">Binatang a.k.a Bintang</h1>
+                    <img class="w-44 object-contain rounded-full" src="assets/img/pemateri.jpeg"/>
+                   
+                        <pre class="text-start self-start text-sm md:text-xl">
+                           Nama     : Bintang Romsya Kautsar<br>
+                           Umur     : Gatau<br>
+                           Statu    : Janda:<br>
+                           Prestasi : Masuk Stan (udah itu doang)
+                        </pre>
+                        
+                    <button class="italic" id="homeBtn" onclick="show(homeElement)"><i class="fa-solid fa-star"></i> keren banget kan pematerinyaaa!! <i class="fa-solid fa-star"></i></button>
+                </div>
+            `;
+
+        function show(element) {
+            main.innerHTML = element;
+        }
+
+        if (production) {
+            main.innerHTML = homeElement;
+        }
+    </script>
+</body>
+
+</html>
